@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 // components
 import NavBar from '../components/NavBar';
-
-// images
+import Introduction from '../components/MainPage/Introduction';
 
 const MainPage = () => {
   return (
     <Page>
       <NavBar />
+      <Introduction />
     </Page>
   );
 };
