@@ -23,6 +23,7 @@ const NavBar = () => {
 export default NavBar;
 
 const Nav = styled.div`
+  z-index: 1;
   position: fixed;
   display: flex;
   flex-direction: row;
