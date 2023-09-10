@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 // components
+import NavBar from '../components/NavBar';
 
 // images
 
 const MainPage = () => {
-  return <Page></Page>;
+  return (
+    <Page>
+      <NavBar />
+    </Page>
+  );
 };
 
 export default MainPage;
