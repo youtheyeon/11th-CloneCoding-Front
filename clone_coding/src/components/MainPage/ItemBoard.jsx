@@ -9,9 +9,9 @@ const ItemBoard = () => {
       <h1>중고거래 인기매물</h1>
 
       {/* 인기매물 대시보드 */}
-      <DashBoard>
+      <Dashboard>
         <Item />
-      </DashBoard>
+      </Dashboard>
     </Wrapper>
   );
 };
@@ -34,8 +34,9 @@ const Wrapper = styled.div`
   }
 `;
 
-const DashBoard = styled.div`
+const Dashboard = styled.div`
   margin-top: 40px;
+  margin-bottom: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 44px;
