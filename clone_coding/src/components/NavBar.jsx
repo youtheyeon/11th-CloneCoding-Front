@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 // images
 import logo from '../images/logo.svg';
+import search from '../images/search-icon.png';
+import menu from '../images/menu.webp';
 
 const NavBar = () => {
   return (
@@ -16,7 +18,9 @@ const NavBar = () => {
       </Category>
       <div>
         <SearchInput placeholder='물품이나 동네를 검색해보세요' />
+        <SearchIcon src={search} alt='search' />
         <ChattingBtn>채팅하기</ChattingBtn>
+        <Menu src={menu} alt='menu' />
       </div>
     </Nav>
   );
@@ -41,6 +45,7 @@ const Nav = styled.div`
   div {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 `;
 
@@ -54,6 +59,7 @@ const Category = styled.ul`
   list-style: none;
 
   li {
+    font-size: 18px;
     font-weight: 600;
     color: #4d5159;
     cursor: pointer;
@@ -80,6 +86,22 @@ const SearchInput = styled.input`
   border-radius: 0.6rem;
   font-family: 'Pretendard-Regular';
   font-size: 16px;
+
+  /* 화면 너비가 992px 이하일 때 검색창을 띄우지 않음 */
+  @media (max-width: 992px) {
+    display: none;
+  }
+`;
+
+const SearchIcon = styled.img`
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+
+  /* 화면 너비가 992px 이하일 때 아이콘을 띄움 */
+  @media (min-width: 992px) {
+    display: none;
+  }
 `;
 
 const ChattingBtn = styled.button`
@@ -98,6 +120,23 @@ const ChattingBtn = styled.button`
 
   &:hover {
     background-color: #f5f5f5;
-    color: #535353;
+    color: #717171;
+  }
+
+  /* 화면 너비가 768px 이하일 때 버튼을 띄우지 않음 */
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const Menu = styled.img`
+  margin-left: 12px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+
+  /* 화면 너비가 768px 이하일 때 아이콘을 띄움 */
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
