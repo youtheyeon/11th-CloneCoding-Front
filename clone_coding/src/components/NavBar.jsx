@@ -14,8 +14,10 @@ const NavBar = () => {
         <li>부동산 직거래</li>
         <li>중고차 직거래</li>
       </Category>
-      <SearchInput placeholder='물품이나 동네를 검색해보세요' />
-      <ChattingBtn>채팅하기</ChattingBtn>
+      <div>
+        <SearchInput placeholder='물품이나 동네를 검색해보세요' />
+        <ChattingBtn>채팅하기</ChattingBtn>
+      </div>
     </Nav>
   );
 };
@@ -27,6 +29,7 @@ const Nav = styled.div`
   position: fixed;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1200px;
@@ -34,23 +37,35 @@ const Nav = styled.div`
   padding: 12px 20px;
   box-sizing: border-box;
   background-color: #fff;
+
+  div {
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 const Category = styled.ul`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   width: 661px;
   height: auto;
-  gap: 30px;
+  row-gap: 10px;
+  column-gap: 30px;
   list-style: none;
 
   li {
-    cursor: pointer;
+    font-weight: 600;
     color: #4d5159;
+    cursor: pointer;
 
     &:hover {
       color: #888888;
     }
+  }
+
+  /* 화면 너비가 768px 이하일 때 카테고리를 띄우지 않음 */
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -63,6 +78,8 @@ const SearchInput = styled.input`
   border: none;
   outline: none;
   border-radius: 0.6rem;
+  font-family: 'Pretendard-Regular';
+  font-size: 16px;
 `;
 
 const ChattingBtn = styled.button`
@@ -73,5 +90,14 @@ const ChattingBtn = styled.button`
   box-sizing: border-box;
   background-color: #fff;
   border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-family: 'Pretendard-Regular';
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+
+  &:hover {
+    background-color: #f5f5f5;
+    color: #535353;
+  }
 `;

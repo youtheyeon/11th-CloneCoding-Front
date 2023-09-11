@@ -47,6 +47,7 @@ const Wrapper = styled.div`
     min-width: 769px;
     margin-top: 16px;
     font-size: 18px;
+    font-weight: 400;
     line-height: 1.32;
     color: #212529;
   }
