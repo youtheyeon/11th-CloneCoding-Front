@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 // components
 import NavBar from '../components/NavBar';
+import Article from '../components/DetailPage/Article';
 
 const DetailPage = () => {
   return (
     <Page>
       <NavBar />
+      <Article />
     </Page>
   );
 };
