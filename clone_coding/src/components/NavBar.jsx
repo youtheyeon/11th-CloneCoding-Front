@@ -8,20 +8,22 @@ import menu from '../images/menu.webp';
 const NavBar = () => {
   return (
     <Nav>
-      <img src={logo} alt='logo' style={{width: '65px', height: '35px'}} />
-      <Category>
-        <li style={{color: 'orange'}}>중고거래</li>
-        <li>동네가게</li>
-        <li>알바</li>
-        <li>부동산 직거래</li>
-        <li>중고차 직거래</li>
-      </Category>
-      <div>
-        <SearchInput placeholder='물품이나 동네를 검색해보세요' />
-        <SearchIcon src={search} alt='search' />
-        <ChattingBtn>채팅하기</ChattingBtn>
-        <Menu src={menu} alt='menu' />
-      </div>
+      <Container>
+        <img src={logo} alt='logo' style={{width: '65px', height: '35px'}} />
+        <Category>
+          <li style={{color: 'orange'}}>중고거래</li>
+          <li>동네가게</li>
+          <li>알바</li>
+          <li>부동산 직거래</li>
+          <li>중고차 직거래</li>
+        </Category>
+        <div>
+          <SearchInput placeholder='물품이나 동네를 검색해보세요' />
+          <SearchIcon src={search} alt='search' />
+          <ChattingBtn>채팅하기</ChattingBtn>
+          <Menu src={menu} alt='menu' />
+        </div>
+      </Container>
     </Nav>
   );
 };
@@ -32,6 +34,14 @@ const Nav = styled.div`
   z-index: 1;
   position: fixed;
   display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  background-color: #fff;
+`;
+
+const Container = styled.div`
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +50,6 @@ const Nav = styled.div`
   height: 64px;
   padding: 12px 20px;
   box-sizing: border-box;
-  background-color: #fff;
 
   div {
     display: flex;
