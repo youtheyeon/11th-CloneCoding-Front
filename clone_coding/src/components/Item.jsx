@@ -52,7 +52,6 @@ const Container = styled.div`
     margin-top: 8px;
     font-size: 16px;
     letter-spacing: -0.02px;
-    color: #212529;
   }
 
   span:nth-child(3) {
@@ -64,7 +63,6 @@ const Container = styled.div`
   span:nth-child(4) {
     font-size: 13px;
     line-height: 1.5;
-    color: #212529;
   }
 
   span:nth-child(5) {
