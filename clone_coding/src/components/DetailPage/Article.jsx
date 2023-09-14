@@ -6,8 +6,6 @@ import itemCover1 from '../../images/intro-cover.webp'; //임시 이미지
 const Article = () => {
   return (
     <Wrapper>
-      {/* 이미지 슬라이더 */}
-
       {/* 사용자 정보 */}
       <User>
         <div>
@@ -48,9 +46,9 @@ const Article = () => {
 export default Article;
 
 const Wrapper = styled.div`
-  margin-top: 64px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const User = styled.div`
