@@ -7,7 +7,7 @@ import Item from '../Item';
 import {itemData} from '../../_mock/itemData';
 
 const ItemBoard = () => {
-  const [items, setItem] = useState(itemData); // 부스 목록
+  const [items, setItem] = useState(itemData); //매물 목록
 
   return (
     <Wrapper>
