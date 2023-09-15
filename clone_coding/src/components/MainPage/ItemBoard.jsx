@@ -1,16 +1,23 @@
 import styled from 'styled-components';
+import {useState} from 'react';
 
 // components
 import Item from '../Item';
 
+import {itemData} from '../../_mock/itemData';
+
 const ItemBoard = () => {
+  const [items, setItem] = useState(itemData); // 부스 목록
+
   return (
     <Wrapper>
       <h1>중고거래 인기매물</h1>
 
       {/* 인기매물 대시보드 */}
       <Dashboard>
-        <Item />
+        {items.map((item) => (
+          <Item key={item.id} item={item} />
+        ))}
       </Dashboard>
     </Wrapper>
   );

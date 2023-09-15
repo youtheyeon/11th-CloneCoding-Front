@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
-// images
-import itemCover1 from '../images/intro-cover.webp'; //임시 이미지
-
-const Item = () => {
+const Item = ({item}) => {
   return (
     <Container>
       <div>
-        <img src={itemCover1} alt='item cover 1' />
+        <img src={item.images[0]} alt='item cover' />
       </div>
-      <span>제목</span>
-      <span>가격 원</span>
-      <span>주소</span>
-      <span>관심 3·채팅 19</span>
+      <span>{item.title}</span>
+      <span>{item.price}원</span>
+      <span>{item.place}</span>
+      <span>
+        관심 {item.like} · 채팅 {item.chat}
+      </span>
     </Container>
   );
 };
