@@ -1,7 +1,7 @@
 export const itemData = [
   {
     id: 1,
-    profille:
+    profile:
       'https://dnvefa72aowie.cloudfront.net/origin/profile/202107/04da74b4d10215e11395e209042292497186a543e2d4bc71af62369f2c27469f.webp?q=82&s=80x80&t=crop&f=webp',
     user: 'is',
     place: '강서구 등촌제2동',
@@ -21,7 +21,7 @@ export const itemData = [
   },
   {
     id: 2,
-    profille: '',
+    profile: '',
     user: '곤이',
     place: '전주시 덕진구 송천2동',
     temp: '36.5',
@@ -43,7 +43,7 @@ export const itemData = [
   },
   {
     id: 3,
-    profille: '',
+    profile: '',
     user: '포켓몬마스터',
     place: '파주시 야당동',
     temp: '38.5',
@@ -80,7 +80,7 @@ export const itemData = [
   },
   {
     id: 4,
-    profille: '',
+    profile: '',
     user: '흐이',
     place: '종로구 통인동',
     temp: '54.8',
@@ -101,7 +101,7 @@ export const itemData = [
   },
   {
     id: 5,
-    profille:
+    profile:
       'https://dnvefa72aowie.cloudfront.net/origin/profile/202204/35e636864c30b964db17ea459ee49c744704ac6a2af651a655807d8be26e877d.webp?q=82&s=80x80&t=crop&f=webp',
     user: '자연송이',
     place: '서구 화정동',
