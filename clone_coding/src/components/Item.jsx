@@ -1,8 +1,15 @@
 import styled from 'styled-components';
+import {useNavigate} from 'react-router-dom';
 
 const Item = ({item}) => {
+  const navigate = useNavigate();
+
   return (
-    <Container>
+    <Container
+      onClick={() => {
+        navigate(`/articles/${item.id}`);
+      }}
+    >
       <div>
         <img src={item.images[0]} alt='item cover' />
       </div>
