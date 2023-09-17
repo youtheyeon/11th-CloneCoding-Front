@@ -10,6 +10,10 @@ import itemCover1 from '../../images/intro-cover.webp'; //임시 이미지
 
 export default class SimpleSlider extends Component {
   render() {
+    const {images} = this.props;
+
+    console.log(images);
+
     const settings = {
       dots: true,
       infinite: true,
@@ -36,12 +40,11 @@ export default class SimpleSlider extends Component {
     return (
       <div>
         <StyledSlider {...settings}>
-          <ImageBox>
-            <img src={itemCover1} alt='1'></img>
-          </ImageBox>
-          <ImageBox>
-            <img src={itemCover1} alt='2'></img>
-          </ImageBox>
+          {images.map((url, index) => (
+            <ImageBox key={index}>
+              <img src={url} alt={`Image ${index + 1}`} />
+            </ImageBox>
+          ))}
         </StyledSlider>
       </div>
     );

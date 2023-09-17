@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // images
 import itemCover1 from '../../images/intro-cover.webp'; //임시 이미지
 
-const Article = () => {
+const Article = ({item}) => {
   return (
     <Wrapper>
       {/* 사용자 정보 */}
@@ -11,16 +11,16 @@ const Article = () => {
         <div>
           {/* 사용자 정보 왼쪽 */}
           <div>
-            <Profile src={itemCover1} alt='profile' />
+            <Profile src={item.profile} alt='profile' />
             <ul>
-              <li>닉네임</li>
-              <li>주소</li>
+              <li>{item.user}</li>
+              <li>{item.place}</li>
             </ul>
           </div>
           {/* 사용자 정보 오른쪽 */}
           <div>
             <ul style={{textAlign: 'right'}}>
-              <span>37.2 °C</span>
+              <span>{item.temp}°C</span>
               <TempBar>
                 <div />
               </TempBar>
@@ -33,11 +33,15 @@ const Article = () => {
 
       {/* 내용 */}
       <Content>
-        <span>베트남 동 판매합니다.</span>
-        <span>분류 · 시간</span>
-        <span>가격</span>
-        <div>내용</div>
-        <span>관심 14 ∙ 채팅 33 ∙ 조회 3899</span>
+        <span>{item.title}</span>
+        <span>
+          {item.category} · {item.date}
+        </span>
+        <span>{item.price}원</span>
+        <div>{item.content}</div>
+        <span>
+          관심 {item.like} ∙ 채팅 {item.chat} ∙ 조회 {item.view}
+        </span>
       </Content>
     </Wrapper>
   );
