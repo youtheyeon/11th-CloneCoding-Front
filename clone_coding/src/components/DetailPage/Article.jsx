@@ -1,9 +1,44 @@
 import styled from 'styled-components';
 
 // images
-import itemCover1 from '../../images/intro-cover.webp'; //임시 이미지
+import face01 from '../../images/face/face01.png';
+import face02 from '../../images/face/face02.png';
+import face03 from '../../images/face/face03.png';
+import face04 from '../../images/face/face04.png';
+import face05 from '../../images/face/face05.png';
+import face06 from '../../images/face/face06.png';
 
 const Article = ({item}) => {
+  // profile이 비어있으면 기본 프로필 사진 적용
+  if (item.profile === '') {
+    item.profile =
+      'https://d1unjqcospf8gs.cloudfront.net/assets/users/default_profile_80-c649f052a34ebc4eee35048815d8e4f73061bf74552558bb70e07133f25524f9.png';
+  }
+
+  var selectedFaceImage;
+  var selectedFaceColor;
+
+  //매너온도에 따른 아이콘 변화
+  if (item.temp <= 30) {
+    selectedFaceImage = face02;
+    selectedFaceColor = '#081B2D';
+  } else if (item.temp <= 36.2) {
+    selectedFaceImage = face03;
+    selectedFaceColor = '#0d3a65';
+  } else if (item.temp <= 37.5) {
+    selectedFaceImage = face04;
+    selectedFaceColor = '#1561a9';
+  } else if (item.temp <= 42) {
+    selectedFaceImage = face05;
+    selectedFaceColor = '#319e45';
+  } else if (item.temp <= 52) {
+    selectedFaceImage = face06;
+    selectedFaceColor = '#df9100';
+  } else {
+    selectedFaceImage = face01;
+    selectedFaceColor = '#de5d06';
+  }
+
   return (
     <Wrapper>
       {/* 사용자 정보 */}
@@ -20,12 +55,17 @@ const Article = ({item}) => {
           {/* 사용자 정보 오른쪽 */}
           <div>
             <ul style={{textAlign: 'right'}}>
-              <span>{item.temp}°C</span>
+              <span style={{color: selectedFaceColor}}>{item.temp}°C</span>
               <TempBar>
-                <div />
+                <div
+                  style={{
+                    backgroundColor: selectedFaceColor,
+                    width: `${item.temp}%`,
+                  }}
+                />
               </TempBar>
             </ul>
-            <Face src={itemCover1} alt='temperature' />
+            <Face src={selectedFaceImage} alt='temperature' />
           </div>
         </div>
         <TempText>매너온도</TempText>
@@ -108,10 +148,8 @@ const Profile = styled.img`
 `;
 
 const Face = styled.img`
-  width: 24px;
+  width: 100%;
   height: 24px;
-  border-radius: 50%;
-  object-fit: cover;
 `;
 
 const TempBar = styled.div`
@@ -124,9 +162,7 @@ const TempBar = styled.div`
 
   div {
     position: absolute;
-    width: 30%; //임시 값
     height: 100%;
-    background-color: #1561a9;
     border-radius: 10px;
   }
 `;
