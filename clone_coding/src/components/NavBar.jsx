@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {useNavigate} from 'react-router-dom';
 
 // images
 import logo from '../images/logo.svg';
@@ -6,12 +7,21 @@ import search from '../images/search-icon.png';
 import menu from '../images/menu.webp';
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
   return (
     <Nav>
       <Container>
         <img src={logo} alt='logo' style={{width: '65px', height: '35px'}} />
         <Category>
-          <li style={{color: 'orange'}}>중고거래</li>
+          <li
+            style={{color: 'orange'}}
+            onClick={() => {
+              navigate(`/`);
+            }}
+          >
+            중고거래
+          </li>
           <li>동네가게</li>
           <li>알바</li>
           <li>부동산 직거래</li>
