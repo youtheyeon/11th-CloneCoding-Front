@@ -13,6 +13,8 @@ const DetailPage = () => {
   const {id} = useParams();
   const [item, setItem] = useState(itemData[id - 1]);
 
+  window.scrollTo(0, 0); //navigate 후 스크롤 위치 맨 위로 지정
+
   console.log(item);
   return (
     <Page>
