@@ -6,13 +6,10 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import next from '../../images/next.png';
 import back from '../../images/back.png';
-import itemCover1 from '../../images/intro-cover.webp'; //임시 이미지
 
 export default class SimpleSlider extends Component {
   render() {
     const {images} = this.props;
-
-    console.log(images);
 
     const settings = {
       dots: true,
@@ -42,7 +39,7 @@ export default class SimpleSlider extends Component {
         <StyledSlider {...settings}>
           {images.map((url, index) => (
             <ImageBox key={index}>
-              <img src={url} alt={`Image ${index + 1}`} />
+              <img src={url} alt={`slide ${index + 1}`} />
             </ImageBox>
           ))}
         </StyledSlider>
@@ -96,7 +93,6 @@ const ImageBox = styled.div`
 
   img {
     width: 100%;
-    background-color: #d1d1d1; //임시
   }
 `;
 

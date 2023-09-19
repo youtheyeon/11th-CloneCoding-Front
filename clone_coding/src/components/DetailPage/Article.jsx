@@ -44,7 +44,7 @@ const Article = ({item}) => {
       {/* 사용자 정보 */}
       <User>
         <div>
-          {/* 사용자 정보 왼쪽 */}
+          {/* 사용자 정보 왼쪽 (닉네임, 장소) */}
           <div>
             <Profile src={item.profile} alt='profile' />
             <ul>
@@ -52,7 +52,7 @@ const Article = ({item}) => {
               <li>{item.place}</li>
             </ul>
           </div>
-          {/* 사용자 정보 오른쪽 */}
+          {/* 사용자 정보 오른쪽 (매너온도) */}
           <div>
             <ul style={{textAlign: 'right'}}>
               <span style={{color: selectedFaceColor}}>{item.temp}°C</span>
@@ -73,13 +73,13 @@ const Article = ({item}) => {
 
       {/* 내용 */}
       <Content>
-        <span>{item.title}</span>
-        <span>
+        <span className='title'>{item.title}</span>
+        <span className='category-date'>
           {item.category} · {item.date}
         </span>
-        <span>{item.price}원</span>
+        <span className='price'>{item.price}원</span>
         <div>{item.content}</div>
-        <span>
+        <span className='etc'>
           관심 {item.like} ∙ 채팅 {item.chat} ∙ 조회 {item.view}
         </span>
       </Content>
@@ -191,22 +191,22 @@ const Content = styled.div`
     word-break: break-all;
   }
 
-  span:nth-child(1) {
+  .title {
     font-size: 20px;
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: -0.6px;
   }
 
-  span:nth-child(2),
-  span:nth-child(5) {
+  .category-date,
+  .etc {
     font-size: 13px;
     line-height: 1.46;
     letter-spacing: -0.6px;
     color: #868e96;
   }
 
-  span:nth-child(3) {
+  .price {
     font-size: 18px;
     font-weight: bold;
     line-height: 1.76;

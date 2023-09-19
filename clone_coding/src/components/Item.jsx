@@ -13,10 +13,10 @@ const Item = ({item}) => {
       <div>
         <img src={item.images[0]} alt='item cover' />
       </div>
-      <span>{item.title}</span>
-      <span>{item.price}원</span>
-      <span>{item.place}</span>
-      <span>
+      <span className='title'>{item.title}</span>
+      <span className='price'>{item.price}원</span>
+      <span className='place'>{item.place}</span>
+      <span className='etc'>
         관심 {item.like} · 채팅 {item.chat}
       </span>
     </Container>
@@ -54,24 +54,24 @@ const Container = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  span:nth-child(2) {
+  .title {
     margin-top: 8px;
     font-size: 16px;
     letter-spacing: -0.02px;
   }
 
-  span:nth-child(3) {
+  .price {
     font-size: 15px;
     font-weight: 700;
     line-height: 1.5;
   }
 
-  span:nth-child(4) {
+  .place {
     font-size: 13px;
     line-height: 1.5;
   }
 
-  span:nth-child(5) {
+  .etc {
     font-size: 13px;
     color: #868e96;
   }
