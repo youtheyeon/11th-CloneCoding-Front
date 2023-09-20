@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import styled from 'styled-components';
 import {useNavigate} from 'react-router-dom';
 import Slider from 'react-slick';
@@ -9,6 +8,10 @@ import next from '../../images/next.png';
 import back from '../../images/back.png';
 
 function SimpleSlider({id, images}) {
+  const SlickButtonFix = ({currentSlide, slideCount, children, ...props}) => (
+    <span {...props}>{children}</span>
+  );
+
   const settings = {
     dots: true,
     infinite: true,
@@ -16,14 +19,18 @@ function SimpleSlider({id, images}) {
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: (
-      <NextArrow>
-        <img src={next} alt='next button' />
-      </NextArrow>
+      <SlickButtonFix>
+        <Arrow>
+          <img src={next} alt='next button' />
+        </Arrow>
+      </SlickButtonFix>
     ),
     prevArrow: (
-      <BackArrow>
-        <img src={back} alt='back button' />
-      </BackArrow>
+      <SlickButtonFix>
+        <Arrow>
+          <img src={back} alt='back button' />
+        </Arrow>
+      </SlickButtonFix>
     ),
     appendDots: (dots) => (
       <DoxBox>
@@ -64,27 +71,26 @@ const StyledSlider = styled(Slider)`
   height: 500px;
   position: relative;
 
-  .slick-prev::before,
+  .slick-prev::before {
+    opacity: 0;
+    display: none;
+  }
+
   .slick-next::before {
     opacity: 0;
     display: none;
   }
-`;
 
-const NextArrow = styled.div`
-  position: absolute;
-  right: -40px;
-  width: 21px;
-  height: 21px;
+  .slick-prev {
+    left: -40px;
+  }
 
-  img {
-    width: 100%;
+  .slick-next {
+    right: -40px;
   }
 `;
 
-const BackArrow = styled.div`
-  position: absolute;
-  left: -40px;
+const Arrow = styled.div`
   width: 21px;
   height: 21px;
 
