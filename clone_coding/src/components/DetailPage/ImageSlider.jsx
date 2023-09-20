@@ -113,7 +113,7 @@ const ImageBox = styled.div`
 const DoxBox = styled.div`
   width: 100%;
   position: absolute;
-  bottom: 0px;
+  bottom: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
