@@ -1,13 +1,31 @@
 import styled from 'styled-components';
+import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 // images
 import logo from '../images/logo.svg';
 import search from '../images/search-icon.png';
+import reset from '../images/reset.png';
 import menu from '../images/menu.webp';
 
 const NavBar = () => {
   const navigate = useNavigate();
+
+  //검색창 관리
+  const [searchText, setSearchText] = useState('');
+
+  //검색어 초기화 함수
+  const resetSearchText = () => {
+    setSearchText('');
+  };
+
+  //검색창 반응형 관리
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
+
+  // 화면 크기가 변경될 때마다 isMobile 상태 업데이트
+  window.addEventListener('resize', () => {
+    setIsMobile(window.innerWidth <= 992);
+  });
 
   return (
     <Nav>
@@ -28,7 +46,25 @@ const NavBar = () => {
           <li>중고차 직거래</li>
         </Category>
         <div>
-          <SearchInput placeholder='물품이나 동네를 검색해보세요' />
+          {!isMobile && (
+            <SearchBox>
+              <input
+                placeholder='물품이나 동네를 검색해보세요'
+                value={searchText}
+                onChange={(e) => {
+                  setSearchText(e.target.value);
+                }}
+              />
+              {searchText && (
+                <img
+                  src={reset}
+                  alt='reset-search-text'
+                  onClick={resetSearchText}
+                />
+              )}
+            </SearchBox>
+          )}
+
           <SearchIcon src={search} alt='search' />
           <ChattingBtn>채팅하기</ChattingBtn>
           <Menu src={menu} alt='menu' />
@@ -94,17 +130,32 @@ const Category = styled.ul`
   }
 `;
 
-const SearchInput = styled.input`
+const SearchBox = styled.div`
+  position: relative;
   width: 288px;
   height: 40px;
   padding: 9px 12px;
   box-sizing: border-box;
   background-color: #f2f3f6;
-  border: none;
-  outline: none;
   border-radius: 0.6rem;
-  font-family: 'Pretendard-Regular';
-  font-size: 16px;
+
+  input {
+    width: 244px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+  }
+
+  img {
+    position: absolute;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    cursor: pointer;
+  }
 
   /* 화면 너비가 992px 이하일 때 검색창을 띄우지 않음 */
   @media (max-width: 992px) {
