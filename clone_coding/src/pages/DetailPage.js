@@ -19,7 +19,7 @@ const DetailPage = () => {
   return (
     <Page>
       <NavBar />
-      <ImageSlider images={item.images} />
+      <ImageSlider id={id} images={item.images} />
       <Article item={item} />
     </Page>
   );
