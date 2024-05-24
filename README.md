@@ -1,6 +1,7 @@
 # 11th-CloneCoding-Front
 이화여대 멋사 11기 프론트엔드 클론코딩 스터디
 
+</br>
 
 ## 💻 프로젝트 소개
 당근마켓 웹사이트 클론코딩
@@ -9,18 +10,12 @@
 | :-------------------------------------------: | :------------: |
 |  <img width="329" src="https://github.com/EWHA-LIKELION/11th-CloneCoding-Front/assets/127864650/8d0db057-7bba-4eda-9ea8-950d68b9af5a"/> |  <img width="329" src="https://github.com/EWHA-LIKELION/11th-CloneCoding-Front/assets/127864650/ca2585d6-51c4-4998-82f1-c9d9709edfde"/>|  
 
-## 👩‍💻 개발자 소개
-
-|                 [유서연](https://github.com/youtheyeon)                   |
-| :------------------------------------: |
-| <img src="https://github.com/EWHA-LIKELION/11th-CloneCoding-Front/assets/127864650/6b931c51-fffd-4a49-8b84-34ab25f1a9f2" width="150" height="150"/> |
-|               프론트엔드               |
-
+</br>
 
 ## ⏰ 개발 기간
 
 - 23.09.10 ~ 23.09.21
-
+</br>
 
 ## 🛠️ 기술 스택
 
